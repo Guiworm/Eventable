@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		73D13B201DECB5C000EDE4C4 /* alkdfjwdlkfjalsdkfjlkdjViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D13B1F1DECB5C000EDE4C4 /* alkdfjwdlkfjalsdkfjlkdjViewController.m */; };
-		A02D50271DECB521003A2BC5 /* sdfdsfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50261DECB521003A2BC5 /* sdfdsfViewController.m */; };
 		A04F89271DEBE16C002DC285 /* NavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04F89261DEBE16C002DC285 /* NavController.m */; };
 		A0731C841DEBC32800730908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C831DEBC32800730908 /* main.m */; };
 		A0731C871DEBC32800730908 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C861DEBC32800730908 /* AppDelegate.m */; };
@@ -26,8 +25,6 @@
 		73D13B1F1DECB5C000EDE4C4 /* alkdfjwdlkfjalsdkfjlkdjViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = alkdfjwdlkfjalsdkfjlkdjViewController.m; sourceTree = "<group>"; };
 		74D6A46E429ED2928E71B094 /* Pods-Eventable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eventable/Pods-Eventable.debug.xcconfig"; sourceTree = "<group>"; };
 		A02512271DECAA1F00C340E0 /* Eventable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eventable.entitlements; sourceTree = "<group>"; };
-		A02D50251DECB521003A2BC5 /* sdfdsfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdfdsfViewController.h; sourceTree = "<group>"; };
-		A02D50261DECB521003A2BC5 /* sdfdsfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sdfdsfViewController.m; sourceTree = "<group>"; };
 		A04F89251DEBE16C002DC285 /* NavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavController.h; sourceTree = "<group>"; };
 		A04F89261DEBE16C002DC285 /* NavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavController.m; sourceTree = "<group>"; };
 		A0731C7F1DEBC32800730908 /* Eventable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,10 +99,8 @@
 				A0731C861DEBC32800730908 /* AppDelegate.m */,
 				A0731C881DEBC32800730908 /* ViewController.h */,
 				A0731C891DEBC32800730908 /* ViewController.m */,
-				A02D50251DECB521003A2BC5 /* sdfdsfViewController.h */,
 				73D13B1E1DECB5C000EDE4C4 /* alkdfjwdlkfjalsdkfjlkdjViewController.h */,
 				73D13B1F1DECB5C000EDE4C4 /* alkdfjwdlkfjalsdkfjlkdjViewController.m */,
-				A02D50261DECB521003A2BC5 /* sdfdsfViewController.m */,
 				A0731C8E1DEBC32800730908 /* Assets.xcassets */,
 				A0731C901DEBC32800730908 /* LaunchScreen.storyboard */,
 				A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */,
@@ -252,7 +247,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A02D50271DECB521003A2BC5 /* sdfdsfViewController.m in Sources */,
 				A0731C8A1DEBC32800730908 /* ViewController.m in Sources */,
 				A0731C871DEBC32800730908 /* AppDelegate.m in Sources */,
 				A0731C841DEBC32800730908 /* main.m in Sources */,
