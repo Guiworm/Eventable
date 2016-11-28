@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+@import Firebase;
+@import FirebaseDatabase;
+
 
 @interface ViewController ()
+
+@property (nonatomic) FIRDatabaseReference *ref;
 
 @end
 
@@ -16,13 +21,8 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    _ref = [[FIRDatabase database] reference];
 
-}
-
-
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
 }
 
 
