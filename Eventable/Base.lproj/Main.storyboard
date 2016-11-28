@@ -42,7 +42,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ra6-Gg-XNF"/>
+                    <navigationItem key="navigationItem" id="Ra6-Gg-XNF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="rMY-Pn-uVJ"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="1791.2" y="668.81559220389806"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Controller-->
         <scene sceneID="Vbe-T2-AN3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pHI-ZN-yS5" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pHI-ZN-yS5" customClass="NavController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="x6l-ff-9UH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -143,7 +145,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcx-o8-dxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-182" y="-208"/>
         </scene>
     </scenes>
     <resources>

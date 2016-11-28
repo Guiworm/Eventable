@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A04F89271DEBE16C002DC285 /* NavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04F89261DEBE16C002DC285 /* NavController.m */; };
 		A0731C841DEBC32800730908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C831DEBC32800730908 /* main.m */; };
 		A0731C871DEBC32800730908 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C861DEBC32800730908 /* AppDelegate.m */; };
 		A0731C8A1DEBC32800730908 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C891DEBC32800730908 /* ViewController.m */; };
 		A0731C8D1DEBC32800730908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0731C8B1DEBC32800730908 /* Main.storyboard */; };
 		A0731C8F1DEBC32800730908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0731C8E1DEBC32800730908 /* Assets.xcassets */; };
 		A0731C921DEBC32800730908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0731C901DEBC32800730908 /* LaunchScreen.storyboard */; };
+		A07D5E661DECA7C700A96571 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */; };
+		E1CDD379EEB3967CAA351132 /* libPods-Eventable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E414831F9C6358584CC75277 /* libPods-Eventable.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68276B55297B2DFD713ECC02 /* Pods-Eventable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventable.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eventable/Pods-Eventable.release.xcconfig"; sourceTree = "<group>"; };
+		74D6A46E429ED2928E71B094 /* Pods-Eventable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eventable/Pods-Eventable.debug.xcconfig"; sourceTree = "<group>"; };
+		A02512271DECAA1F00C340E0 /* Eventable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eventable.entitlements; sourceTree = "<group>"; };
+		A04F89251DEBE16C002DC285 /* NavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavController.h; sourceTree = "<group>"; };
+		A04F89261DEBE16C002DC285 /* NavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavController.m; sourceTree = "<group>"; };
 		A0731C7F1DEBC32800730908 /* Eventable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0731C831DEBC32800730908 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0731C851DEBC32800730908 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +34,8 @@
 		A0731C8E1DEBC32800730908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0731C911DEBC32800730908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0731C931DEBC32800730908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E414831F9C6358584CC75277 /* libPods-Eventable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eventable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CDD379EEB3967CAA351132 /* libPods-Eventable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6671E474A0E638F6B4E77F8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E414831F9C6358584CC75277 /* libPods-Eventable.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F346F91627E2398D6CA22C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74D6A46E429ED2928E71B094 /* Pods-Eventable.debug.xcconfig */,
+				68276B55297B2DFD713ECC02 /* Pods-Eventable.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A0731C761DEBC32800730908 = {
 			isa = PBXGroup;
 			children = (
 				A0731C811DEBC32800730908 /* Eventable */,
 				A0731C801DEBC32800730908 /* Products */,
+				9F346F91627E2398D6CA22C1 /* Pods */,
+				6671E474A0E638F6B4E77F8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +88,17 @@
 		A0731C811DEBC32800730908 /* Eventable */ = {
 			isa = PBXGroup;
 			children = (
+				A02512271DECAA1F00C340E0 /* Eventable.entitlements */,
+				A0731C8B1DEBC32800730908 /* Main.storyboard */,
+				A04F89251DEBE16C002DC285 /* NavController.h */,
+				A04F89261DEBE16C002DC285 /* NavController.m */,
 				A0731C851DEBC32800730908 /* AppDelegate.h */,
 				A0731C861DEBC32800730908 /* AppDelegate.m */,
 				A0731C881DEBC32800730908 /* ViewController.h */,
 				A0731C891DEBC32800730908 /* ViewController.m */,
-				A0731C8B1DEBC32800730908 /* Main.storyboard */,
 				A0731C8E1DEBC32800730908 /* Assets.xcassets */,
 				A0731C901DEBC32800730908 /* LaunchScreen.storyboard */,
+				A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */,
 				A0731C931DEBC32800730908 /* Info.plist */,
 				A0731C821DEBC32800730908 /* Supporting Files */,
 			);
@@ -86,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0731C961DEBC32800730908 /* Build configuration list for PBXNativeTarget "Eventable" */;
 			buildPhases = (
+				A47B52A99E408178878C2678 /* [CP] Check Pods Manifest.lock */,
 				A0731C7B1DEBC32800730908 /* Sources */,
 				A0731C7C1DEBC32800730908 /* Frameworks */,
 				A0731C7D1DEBC32800730908 /* Resources */,
+				578A02EB9064D4C093F4E270 /* [CP] Embed Pods Frameworks */,
+				E346EE3A80CF37F4CE2CDF0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -112,6 +149,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = A337N9L862;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -139,12 +181,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0731C921DEBC32800730908 /* LaunchScreen.storyboard in Resources */,
+				A07D5E661DECA7C700A96571 /* GoogleService-Info.plist in Resources */,
 				A0731C8F1DEBC32800730908 /* Assets.xcassets in Resources */,
 				A0731C8D1DEBC32800730908 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		578A02EB9064D4C093F4E270 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eventable/Pods-Eventable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A47B52A99E408178878C2678 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E346EE3A80CF37F4CE2CDF0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eventable/Pods-Eventable-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0731C7B1DEBC32800730908 /* Sources */ = {
@@ -154,6 +245,7 @@
 				A0731C8A1DEBC32800730908 /* ViewController.m in Sources */,
 				A0731C871DEBC32800730908 /* AppDelegate.m in Sources */,
 				A0731C841DEBC32800730908 /* main.m in Sources */,
+				A04F89271DEBE16C002DC285 /* NavController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +289,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -244,6 +337,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -269,8 +363,10 @@
 		};
 		A0731C971DEBC32800730908 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74D6A46E429ED2928E71B094 /* Pods-Eventable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Eventable/Eventable.entitlements;
 				DEVELOPMENT_TEAM = A337N9L862;
 				INFOPLIST_FILE = Eventable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -281,8 +377,10 @@
 		};
 		A0731C981DEBC32800730908 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68276B55297B2DFD713ECC02 /* Pods-Eventable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Eventable/Eventable.entitlements;
 				DEVELOPMENT_TEAM = A337N9L862;
 				INFOPLIST_FILE = Eventable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -310,6 +408,7 @@
 				A0731C981DEBC32800730908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
