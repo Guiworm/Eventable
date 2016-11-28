@@ -10,7 +10,7 @@
 		A04F89271DEBE16C002DC285 /* NavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04F89261DEBE16C002DC285 /* NavController.m */; };
 		A0731C841DEBC32800730908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C831DEBC32800730908 /* main.m */; };
 		A0731C871DEBC32800730908 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C861DEBC32800730908 /* AppDelegate.m */; };
-		A0731C8A1DEBC32800730908 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C891DEBC32800730908 /* ViewController.m */; };
+		A0731C8A1DEBC32800730908 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C891DEBC32800730908 /* HomeViewController.m */; };
 		A0731C8D1DEBC32800730908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0731C8B1DEBC32800730908 /* Main.storyboard */; };
 		A0731C8F1DEBC32800730908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0731C8E1DEBC32800730908 /* Assets.xcassets */; };
 		A0731C921DEBC32800730908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0731C901DEBC32800730908 /* LaunchScreen.storyboard */; };
@@ -28,8 +28,8 @@
 		A0731C831DEBC32800730908 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0731C851DEBC32800730908 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0731C861DEBC32800730908 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A0731C881DEBC32800730908 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A0731C891DEBC32800730908 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A0731C881DEBC32800730908 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		A0731C891DEBC32800730908 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		A0731C8C1DEBC32800730908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0731C8E1DEBC32800730908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0731C911DEBC32800730908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 				A04F89261DEBE16C002DC285 /* NavController.m */,
 				A0731C851DEBC32800730908 /* AppDelegate.h */,
 				A0731C861DEBC32800730908 /* AppDelegate.m */,
-				A0731C881DEBC32800730908 /* ViewController.h */,
-				A0731C891DEBC32800730908 /* ViewController.m */,
+				A0731C881DEBC32800730908 /* HomeViewController.h */,
+				A0731C891DEBC32800730908 /* HomeViewController.m */,
 				A0731C8E1DEBC32800730908 /* Assets.xcassets */,
 				A0731C901DEBC32800730908 /* LaunchScreen.storyboard */,
 				A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */,
@@ -241,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0731C8A1DEBC32800730908 /* ViewController.m in Sources */,
+				A0731C8A1DEBC32800730908 /* HomeViewController.m in Sources */,
 				A0731C871DEBC32800730908 /* AppDelegate.m in Sources */,
 				A0731C841DEBC32800730908 /* main.m in Sources */,
 				A04F89271DEBE16C002DC285 /* NavController.m in Sources */,
