@@ -11,6 +11,7 @@
 		A02D502D1DECDC71003A2BC5 /* ItemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D502C1DECDC71003A2BC5 /* ItemViewCell.m */; };
 		A02D50341DECFC30003A2BC5 /* CreateItemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50331DECFC30003A2BC5 /* CreateItemViewCell.m */; };
 		A02D50371DECFCD2003A2BC5 /* CreateEventViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50361DECFCD2003A2BC5 /* CreateEventViewCell.m */; };
+		A02D503A1DED2358003A2BC5 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50391DED2358003A2BC5 /* EventDetailsViewController.m */; };
 		A04F89271DEBE16C002DC285 /* NavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04F89261DEBE16C002DC285 /* NavController.m */; };
 		A0731C841DEBC32800730908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C831DEBC32800730908 /* main.m */; };
 		A0731C871DEBC32800730908 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C861DEBC32800730908 /* AppDelegate.m */; };
@@ -34,6 +35,8 @@
 		A02D50331DECFC30003A2BC5 /* CreateItemViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemViewCell.m; sourceTree = "<group>"; };
 		A02D50351DECFCD2003A2BC5 /* CreateEventViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewCell.h; sourceTree = "<group>"; };
 		A02D50361DECFCD2003A2BC5 /* CreateEventViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewCell.m; sourceTree = "<group>"; };
+		A02D50381DED2358003A2BC5 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		A02D50391DED2358003A2BC5 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		A04F89251DEBE16C002DC285 /* NavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavController.h; sourceTree = "<group>"; };
 		A04F89261DEBE16C002DC285 /* NavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavController.m; sourceTree = "<group>"; };
 		A0731C7F1DEBC32800730908 /* Eventable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,8 +118,9 @@
 		A0731C811DEBC32800730908 /* Eventable */ = {
 			isa = PBXGroup;
 			children = (
-				A02512271DECAA1F00C340E0 /* Eventable.entitlements */,
 				A0731C8B1DEBC32800730908 /* Main.storyboard */,
+				A02D50381DED2358003A2BC5 /* EventDetailsViewController.h */,
+				A02D50391DED2358003A2BC5 /* EventDetailsViewController.m */,
 				A04F89251DEBE16C002DC285 /* NavController.h */,
 				A04F89261DEBE16C002DC285 /* NavController.m */,
 				A0731C851DEBC32800730908 /* AppDelegate.h */,
@@ -125,9 +129,6 @@
 				A0731C891DEBC32800730908 /* HomeViewController.m */,
 				A02D502E1DECDC82003A2BC5 /* Customs Collection Cells */,
 				A0731C8E1DEBC32800730908 /* Assets.xcassets */,
-				A0731C901DEBC32800730908 /* LaunchScreen.storyboard */,
-				A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */,
-				A0731C931DEBC32800730908 /* Info.plist */,
 				A0731C821DEBC32800730908 /* Supporting Files */,
 			);
 			path = Eventable;
@@ -136,6 +137,10 @@
 		A0731C821DEBC32800730908 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0731C901DEBC32800730908 /* LaunchScreen.storyboard */,
+				A02512271DECAA1F00C340E0 /* Eventable.entitlements */,
+				A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */,
+				A0731C931DEBC32800730908 /* Info.plist */,
 				A0731C831DEBC32800730908 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -175,6 +180,7 @@
 				TargetAttributes = {
 					A0731C7E1DEBC32800730908 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = A337N9L862;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -275,6 +281,7 @@
 				A0731C871DEBC32800730908 /* AppDelegate.m in Sources */,
 				A02D502D1DECDC71003A2BC5 /* ItemViewCell.m in Sources */,
 				A02D50341DECFC30003A2BC5 /* CreateItemViewCell.m in Sources */,
+				A02D503A1DED2358003A2BC5 /* EventDetailsViewController.m in Sources */,
 				A0731C841DEBC32800730908 /* main.m in Sources */,
 				A04F89271DEBE16C002DC285 /* NavController.m in Sources */,
 			);
@@ -398,7 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eventable/Eventable.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A337N9L862;
 				INFOPLIST_FILE = Eventable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DMSC.Eventable;
@@ -412,7 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eventable/Eventable.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A337N9L862;
 				INFOPLIST_FILE = Eventable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DMSC.Eventable;
