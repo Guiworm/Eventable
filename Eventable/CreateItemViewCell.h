@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CreateItemViewCell : UICollectionViewCell
+- (void)setupCell;
 
 @end

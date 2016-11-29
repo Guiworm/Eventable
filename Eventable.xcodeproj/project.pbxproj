@@ -12,6 +12,8 @@
 		A02D50341DECFC30003A2BC5 /* CreateItemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50331DECFC30003A2BC5 /* CreateItemViewCell.m */; };
 		A02D50371DECFCD2003A2BC5 /* CreateEventViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50361DECFCD2003A2BC5 /* CreateEventViewCell.m */; };
 		A02D503A1DED2358003A2BC5 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50391DED2358003A2BC5 /* EventDetailsViewController.m */; };
+		A04435751DEDF0D50088368F /* ItemSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04435741DEDF0D50088368F /* ItemSectionHeaderView.m */; };
+		A04435781DEE1C5A0088368F /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04435771DEE1C5A0088368F /* CreateEventViewController.m */; };
 		A04F89271DEBE16C002DC285 /* NavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04F89261DEBE16C002DC285 /* NavController.m */; };
 		A0731C841DEBC32800730908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C831DEBC32800730908 /* main.m */; };
 		A0731C871DEBC32800730908 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0731C861DEBC32800730908 /* AppDelegate.m */; };
@@ -37,6 +39,10 @@
 		A02D50361DECFCD2003A2BC5 /* CreateEventViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewCell.m; sourceTree = "<group>"; };
 		A02D50381DED2358003A2BC5 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
 		A02D50391DED2358003A2BC5 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
+		A04435731DEDF0D50088368F /* ItemSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemSectionHeaderView.h; sourceTree = "<group>"; };
+		A04435741DEDF0D50088368F /* ItemSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemSectionHeaderView.m; sourceTree = "<group>"; };
+		A04435761DEE1C5A0088368F /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
+		A04435771DEE1C5A0088368F /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 		A04F89251DEBE16C002DC285 /* NavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavController.h; sourceTree = "<group>"; };
 		A04F89261DEBE16C002DC285 /* NavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavController.m; sourceTree = "<group>"; };
 		A0731C7F1DEBC32800730908 /* Eventable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,9 +88,11 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A02D502E1DECDC82003A2BC5 /* Customs Collection Cells */ = {
+		A02D502E1DECDC82003A2BC5 /* Custom Collection Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A04435731DEDF0D50088368F /* ItemSectionHeaderView.h */,
+				A04435741DEDF0D50088368F /* ItemSectionHeaderView.m */,
 				A02D50281DECDC53003A2BC5 /* EventViewCell.h */,
 				A02D50291DECDC53003A2BC5 /* EventViewCell.m */,
 				A02D50351DECFCD2003A2BC5 /* CreateEventViewCell.h */,
@@ -94,7 +102,7 @@
 				A02D50321DECFC30003A2BC5 /* CreateItemViewCell.h */,
 				A02D50331DECFC30003A2BC5 /* CreateItemViewCell.m */,
 			);
-			name = "Customs Collection Cells";
+			name = "Custom Collection Cells";
 			sourceTree = "<group>";
 		};
 		A0731C761DEBC32800730908 = {
@@ -119,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				A0731C8B1DEBC32800730908 /* Main.storyboard */,
+				A04435761DEE1C5A0088368F /* CreateEventViewController.h */,
+				A04435771DEE1C5A0088368F /* CreateEventViewController.m */,
 				A02D50381DED2358003A2BC5 /* EventDetailsViewController.h */,
 				A02D50391DED2358003A2BC5 /* EventDetailsViewController.m */,
 				A04F89251DEBE16C002DC285 /* NavController.h */,
@@ -127,7 +137,7 @@
 				A0731C861DEBC32800730908 /* AppDelegate.m */,
 				A0731C881DEBC32800730908 /* HomeViewController.h */,
 				A0731C891DEBC32800730908 /* HomeViewController.m */,
-				A02D502E1DECDC82003A2BC5 /* Customs Collection Cells */,
+				A02D502E1DECDC82003A2BC5 /* Custom Collection Cells */,
 				A0731C8E1DEBC32800730908 /* Assets.xcassets */,
 				A0731C821DEBC32800730908 /* Supporting Files */,
 			);
@@ -277,11 +287,13 @@
 			files = (
 				A0731C8A1DEBC32800730908 /* HomeViewController.m in Sources */,
 				A02D50371DECFCD2003A2BC5 /* CreateEventViewCell.m in Sources */,
+				A04435751DEDF0D50088368F /* ItemSectionHeaderView.m in Sources */,
 				A02D502A1DECDC53003A2BC5 /* EventViewCell.m in Sources */,
 				A0731C871DEBC32800730908 /* AppDelegate.m in Sources */,
 				A02D502D1DECDC71003A2BC5 /* ItemViewCell.m in Sources */,
 				A02D50341DECFC30003A2BC5 /* CreateItemViewCell.m in Sources */,
 				A02D503A1DED2358003A2BC5 /* EventDetailsViewController.m in Sources */,
+				A04435781DEE1C5A0088368F /* CreateEventViewController.m in Sources */,
 				A0731C841DEBC32800730908 /* main.m in Sources */,
 				A04F89271DEBE16C002DC285 /* NavController.m in Sources */,
 			);
