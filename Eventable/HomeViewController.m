@@ -78,6 +78,7 @@
 		[cell setupCell];
 		return cell;
 	}
+	
 	// Configure all other cells filled with events
 	else{
 		EventViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"eventCell" forIndexPath:indexPath];

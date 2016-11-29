@@ -7,6 +7,9 @@
 //
 
 #import "EventDetailsViewController.h"
+#import "ItemViewCell.h"
+#import "CreateItemViewCell.h"
+#import "ItemSectionHeaderView.h"
 
 @interface EventDetailsViewController ()
 
@@ -24,14 +27,75 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewDidAppear:(BOOL)animated{
+	[self performSegueWithIdentifier:@"createNewEvent" sender:nil];
 }
-*/
+
+#pragma Collection View
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+	return 2;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+	return 5;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+	NSInteger totalCells = [self collectionView:collectionView numberOfItemsInSection:indexPath.section];
+	
+	//Make the last cell a plus to add new item
+	if(indexPath.row == totalCells-1){
+		CreateItemViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"createItemCell" forIndexPath:indexPath];
+		[cell setupCell];
+		return cell;
+	}
+	// Configure all other cells filled with items already
+	else{
+		ItemViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"itemCell" forIndexPath:indexPath];
+		[cell setupCell];
+		
+		//Making the label rounded on top only
+		CAShapeLayer * maskLayer = [CAShapeLayer layer];
+		maskLayer.path = [UIBezierPath bezierPathWithRoundedRect: cell.bounds byRoundingCorners: UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii: (CGSize){5.0, 5.0}].CGPath;
+		//Applying the mask
+		cell.layer.mask = maskLayer;
+		
+		return cell;
+	}
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+	
+	
+}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+	
+	//Name the sections on the event page
+	NSString *title;
+	if (indexPath.section == 0) {
+		title = [NSString stringWithFormat:@"WHAT WE HAVE"];
+	}
+	else{
+		title = [NSString stringWithFormat:@"WHAT WE NEED"];
+
+	}
+	
+	ItemSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"eventHeader" forIndexPath:indexPath];
+	headerView.sectionTitleLabel.text = title;
+	headerView.sectionTitleLabel.textColor = [UIColor whiteColor];
+	
+	return headerView;
+}
 
 @end
+
+
+
+
+
+
+
+
+

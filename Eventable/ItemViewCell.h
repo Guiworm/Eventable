@@ -10,4 +10,9 @@
 
 @interface ItemViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *itemName;
+@property (weak, nonatomic) IBOutlet UIImageView *itemImage;
+
+
+- (void) setupCell;
 @end

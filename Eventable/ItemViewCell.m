@@ -10,4 +10,13 @@
 
 @implementation ItemViewCell
 
+- (void) setupCell{
+	self.itemImage.layer.cornerRadius = 5;
+	self.itemImage.image = [UIImage imageNamed:[NSString stringWithFormat: @"EventBackground%u.png", arc4random_uniform(4)+1]];
+	self.itemName.text = @"New Item";
+//	self.itemName.layer.cornerRadius = 5;
+	self.itemName.textColor = [UIColor whiteColor];
+}
+
+
 @end
