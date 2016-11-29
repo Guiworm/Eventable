@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		928FCF6FC28771D6EC2F705D /* libPods-Eventable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCABF6D76D891BB58219CFF /* libPods-Eventable.a */; };
 		A02D502A1DECDC53003A2BC5 /* EventViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50291DECDC53003A2BC5 /* EventViewCell.m */; };
 		A02D502D1DECDC71003A2BC5 /* ItemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D502C1DECDC71003A2BC5 /* ItemViewCell.m */; };
 		A02D50341DECFC30003A2BC5 /* CreateItemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A02D50331DECFC30003A2BC5 /* CreateItemViewCell.m */; };
@@ -22,12 +23,11 @@
 		A0731C8F1DEBC32800730908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0731C8E1DEBC32800730908 /* Assets.xcassets */; };
 		A0731C921DEBC32800730908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0731C901DEBC32800730908 /* LaunchScreen.storyboard */; };
 		A07D5E661DECA7C700A96571 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */; };
-		E1CDD379EEB3967CAA351132 /* libPods-Eventable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E414831F9C6358584CC75277 /* libPods-Eventable.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		68276B55297B2DFD713ECC02 /* Pods-Eventable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventable.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eventable/Pods-Eventable.release.xcconfig"; sourceTree = "<group>"; };
-		74D6A46E429ED2928E71B094 /* Pods-Eventable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eventable/Pods-Eventable.debug.xcconfig"; sourceTree = "<group>"; };
+		036A291B4AFCB5EDD4C1F313 /* Pods-Eventable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventable.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eventable/Pods-Eventable.release.xcconfig"; sourceTree = "<group>"; };
+		9DCABF6D76D891BB58219CFF /* libPods-Eventable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eventable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02512271DECAA1F00C340E0 /* Eventable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eventable.entitlements; sourceTree = "<group>"; };
 		A02D50281DECDC53003A2BC5 /* EventViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewCell.h; sourceTree = "<group>"; };
 		A02D50291DECDC53003A2BC5 /* EventViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewCell.m; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		A0731C911DEBC32800730908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0731C931DEBC32800730908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E414831F9C6358584CC75277 /* libPods-Eventable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eventable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A09C3AC7711028DF473FF600 /* Pods-Eventable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eventable/Pods-Eventable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,28 +64,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1CDD379EEB3967CAA351132 /* libPods-Eventable.a in Frameworks */,
+				928FCF6FC28771D6EC2F705D /* libPods-Eventable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6671E474A0E638F6B4E77F8D /* Frameworks */ = {
+		96A04C4220DE5D3BB134EF6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E414831F9C6358584CC75277 /* libPods-Eventable.a */,
+				9DCABF6D76D891BB58219CFF /* libPods-Eventable.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9F346F91627E2398D6CA22C1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				74D6A46E429ED2928E71B094 /* Pods-Eventable.debug.xcconfig */,
-				68276B55297B2DFD713ECC02 /* Pods-Eventable.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		A02D502E1DECDC82003A2BC5 /* Custom Collection Cells */ = {
@@ -110,8 +101,8 @@
 			children = (
 				A0731C811DEBC32800730908 /* Eventable */,
 				A0731C801DEBC32800730908 /* Products */,
-				9F346F91627E2398D6CA22C1 /* Pods */,
-				6671E474A0E638F6B4E77F8D /* Frameworks */,
+				A1195E65773AE859DA7834A5 /* Pods */,
+				96A04C4220DE5D3BB134EF6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +147,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A1195E65773AE859DA7834A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A09C3AC7711028DF473FF600 /* Pods-Eventable.debug.xcconfig */,
+				036A291B4AFCB5EDD4C1F313 /* Pods-Eventable.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,12 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0731C961DEBC32800730908 /* Build configuration list for PBXNativeTarget "Eventable" */;
 			buildPhases = (
-				A47B52A99E408178878C2678 /* [CP] Check Pods Manifest.lock */,
+				42D5055A02DA9CA79C7E4D9F /* [CP] Check Pods Manifest.lock */,
 				A0731C7B1DEBC32800730908 /* Sources */,
 				A0731C7C1DEBC32800730908 /* Frameworks */,
 				A0731C7D1DEBC32800730908 /* Resources */,
-				578A02EB9064D4C093F4E270 /* [CP] Embed Pods Frameworks */,
-				E346EE3A80CF37F4CE2CDF0F /* [CP] Copy Pods Resources */,
+				045D198E7B6EBFA82BBB019D /* [CP] Embed Pods Frameworks */,
+				5A2FA96136695AA7CB7E3AA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,7 +233,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		578A02EB9064D4C093F4E270 /* [CP] Embed Pods Frameworks */ = {
+		045D198E7B6EBFA82BBB019D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,7 +248,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eventable/Pods-Eventable-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A47B52A99E408178878C2678 /* [CP] Check Pods Manifest.lock */ = {
+		42D5055A02DA9CA79C7E4D9F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,7 +263,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E346EE3A80CF37F4CE2CDF0F /* [CP] Copy Pods Resources */ = {
+		5A2FA96136695AA7CB7E3AA0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -413,7 +413,7 @@
 		};
 		A0731C971DEBC32800730908 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74D6A46E429ED2928E71B094 /* Pods-Eventable.debug.xcconfig */;
+			baseConfigurationReference = A09C3AC7711028DF473FF600 /* Pods-Eventable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eventable/Eventable.entitlements;
@@ -427,7 +427,7 @@
 		};
 		A0731C981DEBC32800730908 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68276B55297B2DFD713ECC02 /* Pods-Eventable.release.xcconfig */;
+			baseConfigurationReference = 036A291B4AFCB5EDD4C1F313 /* Pods-Eventable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eventable/Eventable.entitlements;
