@@ -7,5 +7,6 @@ target 'Eventable' do
 
 pod 'Firebase'
 pod 'Firebase/Database'
+pod 'Firebase/AdMob'
 
 end

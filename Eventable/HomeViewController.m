@@ -7,14 +7,18 @@
 //
 
 #import "HomeViewController.h"
+#import "EventDetailsViewController.h"
+
 #import "EventViewCell.h"
 #import "CreateEventViewCell.h"
 
 @import Firebase;
 @import FirebaseDatabase;
-
+@import GoogleMobileAds;
+@import QuartzCore;
 
 @interface HomeViewController ()
+@property (weak, nonatomic) IBOutlet GADBannerView *adBannerView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *createEventsCollection;
 @property (weak, nonatomic) IBOutlet UICollectionView *upcomingEventsCollection;
@@ -27,12 +31,21 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	//Firebase database creation
     _fireRef = [[FIRDatabase database] reference];
 	self.navBar.title = @"Events";
+	
+	//AdMob by Google
+	self.adBannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
+	self.adBannerView.rootViewController = self;
+	[self.adBannerView loadRequest:[GADRequest request]];
+	
+	
 }
 -(void)viewDidAppear:(BOOL)animated{
-	[super viewDidAppear:YES];
+	[super viewWillAppear: animated];
 }
+
 
 
 #pragma Collections View
@@ -42,25 +55,41 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-	return 7;
+	if(collectionView == self.createEventsCollection){
+		return 3;
+	}
+	else if (collectionView == self.upcomingEventsCollection){
+		return 6;
+	}
+	else if (collectionView == self.pastEventsCollection){
+		return 4;
+	}
+	
+	return 1;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 	NSInteger totalCells = [self collectionView:collectionView numberOfItemsInSection:indexPath.section];
 	
-	// Configure all cells filled with events
-	if(indexPath.row != totalCells-1){
-		EventViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"eventCell" forIndexPath:indexPath];
-		[cell setupCell];
-		return cell;
-	}
-	
-	//Configure Final Cell in the section to be an "Add New Event" cell
-	else{
+	//Configure Final Cell in the section to be an "Add New Event" cell but
+	//Only on the create collection
+	if((collectionView == self.createEventsCollection) && (indexPath.row == totalCells-1)){
 		CreateEventViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"createEventCell" forIndexPath:indexPath];
 		[cell setupCell];
 		return cell;
 	}
+	// Configure all other cells filled with events
+	else{
+		EventViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"eventCell" forIndexPath:indexPath];
+		[cell setupCell];
+		return cell;
+	}
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+	
+	[self performSegueWithIdentifier:@"showEventDetails" sender:nil];
+	
 }
 
 

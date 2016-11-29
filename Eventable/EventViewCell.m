@@ -16,7 +16,7 @@
 
 - (void)setupCell{
 	self.eventImage.layer.cornerRadius = 5;
-	self.eventImage.image = [UIImage imageNamed:@"EventBackground.png"];
+	self.eventImage.image = [UIImage imageNamed:[NSString stringWithFormat: @"EventBackground%u.png", arc4random_uniform(4)+1]];
 	self.eventName.text = @"New Event";
 	self.eventName.textColor = [UIColor whiteColor];
 }
