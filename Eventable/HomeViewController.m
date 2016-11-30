@@ -42,9 +42,11 @@
 	
 	
 }
+
 -(void)viewDidAppear:(BOOL)animated{
 	[super viewWillAppear: animated];
 }
+
 
 
 
@@ -87,11 +89,15 @@
 	}
 }
 
+//Send cell to the next view controller to determine if it needs to create a new event or not
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-	
-	[self performSegueWithIdentifier:@"showEventDetails" sender:nil];
-	
+	[self performSegueWithIdentifier:@"showEventDetails" sender:[collectionView cellForItemAtIndexPath:indexPath]];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	EventDetailsViewController *vc = (EventDetailsViewController*) segue.destinationViewController;
+	vc.myEventCell = sender;
+	
+}
 
 @end

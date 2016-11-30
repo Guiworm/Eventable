@@ -23,6 +23,8 @@
 		A0731C8F1DEBC32800730908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0731C8E1DEBC32800730908 /* Assets.xcassets */; };
 		A0731C921DEBC32800730908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0731C901DEBC32800730908 /* LaunchScreen.storyboard */; };
 		A07D5E661DECA7C700A96571 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */; };
+		A0D291B61DEE3CF400535304 /* CreateItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D291B51DEE3CF400535304 /* CreateItemViewController.m */; };
+		A0D291B91DEE644500535304 /* ItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D291B81DEE644500535304 /* ItemDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,10 @@
 		A0731C931DEBC32800730908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A09C3AC7711028DF473FF600 /* Pods-Eventable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eventable/Pods-Eventable.debug.xcconfig"; sourceTree = "<group>"; };
+		A0D291B41DEE3CF400535304 /* CreateItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateItemViewController.h; sourceTree = "<group>"; };
+		A0D291B51DEE3CF400535304 /* CreateItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemViewController.m; sourceTree = "<group>"; };
+		A0D291B71DEE644500535304 /* ItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailsViewController.h; sourceTree = "<group>"; };
+		A0D291B81DEE644500535304 /* ItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				A0731C8B1DEBC32800730908 /* Main.storyboard */,
+				A0D291B71DEE644500535304 /* ItemDetailsViewController.h */,
+				A0D291B81DEE644500535304 /* ItemDetailsViewController.m */,
+				A0D291B41DEE3CF400535304 /* CreateItemViewController.h */,
+				A0D291B51DEE3CF400535304 /* CreateItemViewController.m */,
 				A04435761DEE1C5A0088368F /* CreateEventViewController.h */,
 				A04435771DEE1C5A0088368F /* CreateEventViewController.m */,
 				A02D50381DED2358003A2BC5 /* EventDetailsViewController.h */,
@@ -292,9 +302,11 @@
 				A0731C871DEBC32800730908 /* AppDelegate.m in Sources */,
 				A02D502D1DECDC71003A2BC5 /* ItemViewCell.m in Sources */,
 				A02D50341DECFC30003A2BC5 /* CreateItemViewCell.m in Sources */,
+				A0D291B61DEE3CF400535304 /* CreateItemViewController.m in Sources */,
 				A02D503A1DED2358003A2BC5 /* EventDetailsViewController.m in Sources */,
 				A04435781DEE1C5A0088368F /* CreateEventViewController.m in Sources */,
 				A0731C841DEBC32800730908 /* main.m in Sources */,
+				A0D291B91DEE644500535304 /* ItemDetailsViewController.m in Sources */,
 				A04F89271DEBE16C002DC285 /* NavController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

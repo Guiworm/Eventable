@@ -11,6 +11,8 @@
 #import "CreateItemViewCell.h"
 #import "ItemSectionHeaderView.h"
 
+#import "CreateEventViewCell.h"
+
 @interface EventDetailsViewController ()
 
 @end
@@ -28,7 +30,9 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-	[self performSegueWithIdentifier:@"createNewEvent" sender:nil];
+	if([self.myEventCell isMemberOfClass:[CreateEventViewCell class]]){
+		[self performSegueWithIdentifier:@"createNewEvent" sender:nil];
+	}
 }
 
 #pragma Collection View
@@ -67,7 +71,13 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 	
+	if([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[CreateItemViewCell class]]){
+		[self performSegueWithIdentifier:@"addItem" sender:nil];
+	}
 	
+	if([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[ItemViewCell class]]){
+		[self performSegueWithIdentifier:@"itemDetails" sender:nil];
+	}
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{

@@ -10,4 +10,6 @@
 
 @interface EventDetailsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property (nonatomic) UICollectionViewCell *myEventCell;
+
 @end
