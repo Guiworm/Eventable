@@ -14,7 +14,6 @@
 #import "CreateEventViewCell.h"
 
 @import Firebase;
-@import FirebaseDatabase;
 @import GoogleMobileAds;
 @import QuartzCore;
 
@@ -24,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *createEventsCollection;
 @property (weak, nonatomic) IBOutlet UICollectionView *upcomingEventsCollection;
 @property (weak, nonatomic) IBOutlet UICollectionView *pastEventsCollection;
-@property (nonatomic) FIRDatabaseReference *fireRef;
 
 @end
 
@@ -33,7 +31,6 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	//Firebase database creation
-    _fireRef = [[FIRDatabase database] reference];
 	self.navBar.title = @"Events";
 	
 	//AdMob by Google

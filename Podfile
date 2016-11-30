@@ -5,8 +5,7 @@ target 'Eventable' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-pod 'Firebase'
-pod 'Firebase/Database'
+pod 'Firebase/Core’
 pod 'Firebase/AdMob'
 
 end
