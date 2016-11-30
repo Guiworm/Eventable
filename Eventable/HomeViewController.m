@@ -5,6 +5,7 @@
 //  Created by Dylan McCrindle on 2016-11-27.
 //  Copyright © 2016 Dylan-Shahab. All rights reserved.
 //
+#import "DataManager.h"
 
 #import "HomeViewController.h"
 #import "EventDetailsViewController.h"

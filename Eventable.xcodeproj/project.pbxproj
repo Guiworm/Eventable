@@ -25,6 +25,9 @@
 		A07D5E661DECA7C700A96571 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */; };
 		A0D291B61DEE3CF400535304 /* CreateItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D291B51DEE3CF400535304 /* CreateItemViewController.m */; };
 		A0D291B91DEE644500535304 /* ItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D291B81DEE644500535304 /* ItemDetailsViewController.m */; };
+		A0D291BB1DEF466200535304 /* cameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D291BA1DEF466200535304 /* cameraOverlay.xib */; };
+		A0D291BE1DEF79D300535304 /* EventModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0D291BC1DEF79D300535304 /* EventModel.xcdatamodeld */; };
+		A0D291C11DEF7A2F00535304 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D291C01DEF7A2F00535304 /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,10 @@
 		A0D291B51DEE3CF400535304 /* CreateItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemViewController.m; sourceTree = "<group>"; };
 		A0D291B71DEE644500535304 /* ItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailsViewController.h; sourceTree = "<group>"; };
 		A0D291B81DEE644500535304 /* ItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailsViewController.m; sourceTree = "<group>"; };
+		A0D291BA1DEF466200535304 /* cameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cameraOverlay.xib; sourceTree = "<group>"; };
+		A0D291BD1DEF79D300535304 /* EventModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventModel.xcdatamodel; sourceTree = "<group>"; };
+		A0D291BF1DEF7A2F00535304 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		A0D291C01DEF7A2F00535304 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				A0731C8B1DEBC32800730908 /* Main.storyboard */,
+				A0D291BC1DEF79D300535304 /* EventModel.xcdatamodeld */,
 				A0D291B71DEE644500535304 /* ItemDetailsViewController.h */,
 				A0D291B81DEE644500535304 /* ItemDetailsViewController.m */,
 				A0D291B41DEE3CF400535304 /* CreateItemViewController.h */,
@@ -136,6 +144,8 @@
 				A04F89261DEBE16C002DC285 /* NavController.m */,
 				A0731C851DEBC32800730908 /* AppDelegate.h */,
 				A0731C861DEBC32800730908 /* AppDelegate.m */,
+				A0D291BF1DEF7A2F00535304 /* DataManager.h */,
+				A0D291C01DEF7A2F00535304 /* DataManager.m */,
 				A0731C881DEBC32800730908 /* HomeViewController.h */,
 				A0731C891DEBC32800730908 /* HomeViewController.m */,
 				A02D502E1DECDC82003A2BC5 /* Custom Collection Cells */,
@@ -148,6 +158,7 @@
 		A0731C821DEBC32800730908 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0D291BA1DEF466200535304 /* cameraOverlay.xib */,
 				A0731C901DEBC32800730908 /* LaunchScreen.storyboard */,
 				A02512271DECAA1F00C340E0 /* Eventable.entitlements */,
 				A07D5E651DECA7C700A96571 /* GoogleService-Info.plist */,
@@ -235,6 +246,7 @@
 			files = (
 				A0731C921DEBC32800730908 /* LaunchScreen.storyboard in Resources */,
 				A07D5E661DECA7C700A96571 /* GoogleService-Info.plist in Resources */,
+				A0D291BB1DEF466200535304 /* cameraOverlay.xib in Resources */,
 				A0731C8F1DEBC32800730908 /* Assets.xcassets in Resources */,
 				A0731C8D1DEBC32800730908 /* Main.storyboard in Resources */,
 			);
@@ -296,7 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0731C8A1DEBC32800730908 /* HomeViewController.m in Sources */,
+				A0D291C11DEF7A2F00535304 /* DataManager.m in Sources */,
 				A02D50371DECFCD2003A2BC5 /* CreateEventViewCell.m in Sources */,
+				A0D291BE1DEF79D300535304 /* EventModel.xcdatamodeld in Sources */,
 				A04435751DEDF0D50088368F /* ItemSectionHeaderView.m in Sources */,
 				A02D502A1DECDC53003A2BC5 /* EventViewCell.m in Sources */,
 				A0731C871DEBC32800730908 /* AppDelegate.m in Sources */,
@@ -473,6 +487,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A0D291BC1DEF79D300535304 /* EventModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A0D291BD1DEF79D300535304 /* EventModel.xcdatamodel */,
+			);
+			currentVersion = A0D291BD1DEF79D300535304 /* EventModel.xcdatamodel */;
+			path = EventModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A0731C771DEBC32800730908 /* Project object */;
 }

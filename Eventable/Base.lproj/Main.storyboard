@@ -259,8 +259,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOb-9K-AzY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xcv-0m-RTg">
-                                        <rect key="frame" x="23" y="133.5" width="330" height="200"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcv-0m-RTg">
+                                        <rect key="frame" x="23" y="233.5" width="330" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyh-3y-5AU">
                                                 <rect key="frame" x="0.0" y="15" width="330" height="29"/>
@@ -581,7 +581,7 @@
                                             <constraint firstAttribute="width" constant="150" id="NLj-2Q-GkH"/>
                                             <constraint firstAttribute="height" constant="30" id="Yrj-xC-E3O"/>
                                         </constraints>
-                                        <state key="normal" title="Create Event"/>
+                                        <state key="normal" title="Add Item"/>
                                         <connections>
                                             <action selector="newItemButton:" destination="xqS-g1-EA5" eventType="touchUpInside" id="y26-VP-bRc"/>
                                         </connections>
@@ -598,9 +598,9 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ITEM NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9za-Hj-QjD">
-                                        <rect key="frame" x="10" y="69" width="185" height="30"/>
+                                        <rect key="frame" x="20" y="69" width="185" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="185" id="jZW-qr-gxJ"/>
+                                            <constraint firstAttribute="width" constant="185" id="jZW-qr-gxJ"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -624,10 +624,9 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HOW MANY?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ptd-Lt-Ph0">
-                                        <rect key="frame" x="10" y="114" width="185" height="30"/>
+                                        <rect key="frame" x="37.5" y="114" width="150" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="185" id="38s-Fo-hPj"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="UpM-0d-m74"/>
+                                            <constraint firstAttribute="width" constant="150" id="38s-Fo-hPj"/>
                                             <constraint firstAttribute="height" constant="30" id="kbk-ns-hmR"/>
                                         </constraints>
                                         <nil key="textColor"/>
@@ -647,19 +646,23 @@
                                     <constraint firstAttribute="width" constant="330" id="Yrw-q0-PSv"/>
                                     <constraint firstAttribute="trailing" secondItem="e9O-gn-39V" secondAttribute="trailing" constant="10" id="dhk-Je-dVU"/>
                                     <constraint firstAttribute="height" constant="200" id="iC9-dM-Lnk"/>
+                                    <constraint firstItem="Ptd-Lt-Ph0" firstAttribute="centerX" secondItem="9za-Hj-QjD" secondAttribute="centerX" id="oQt-1I-mag"/>
                                     <constraint firstItem="pBk-sv-A20" firstAttribute="top" secondItem="UD2-vw-ANp" secondAttribute="top" constant="15" id="rS5-gt-aEE"/>
-                                    <constraint firstItem="Ptd-Lt-Ph0" firstAttribute="leading" secondItem="UD2-vw-ANp" secondAttribute="leadingMargin" constant="2" id="tq1-yZ-FeZ"/>
                                     <constraint firstItem="9za-Hj-QjD" firstAttribute="top" secondItem="pBk-sv-A20" secondAttribute="bottom" constant="25" id="v8z-EK-gLT"/>
                                     <constraint firstItem="e9O-gn-39V" firstAttribute="centerY" secondItem="UD2-vw-ANp" secondAttribute="centerY" id="vSA-ZO-B6T"/>
-                                    <constraint firstItem="9za-Hj-QjD" firstAttribute="leading" secondItem="UD2-vw-ANp" secondAttribute="leading" constant="10" id="vr5-nd-eCs"/>
+                                    <constraint firstItem="9za-Hj-QjD" firstAttribute="leading" secondItem="UD2-vw-ANp" secondAttribute="leading" constant="20" id="vr5-nd-eCs"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UD2-vw-ANp" firstAttribute="centerX" secondItem="2fB-pu-30m" secondAttribute="centerX" id="9gO-d1-QFi"/>
                             <constraint firstItem="UD2-vw-ANp" firstAttribute="centerY" secondItem="2fB-pu-30m" secondAttribute="centerY" constant="-100" id="UMc-Mt-BMi"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="634-EF-hve" appends="YES" id="whi-MX-Q4o"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="itemCountField" destination="Ptd-Lt-Ph0" id="tT7-71-QT0"/>
@@ -669,8 +672,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fe2-kW-Y9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="634-EF-hve">
+                    <connections>
+                        <action selector="releaseKeyboardTap:" destination="xqS-g1-EA5" id="JuU-p7-McH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2992.8000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2992.5" y="138.5"/>
         </scene>
     </scenes>
     <resources>

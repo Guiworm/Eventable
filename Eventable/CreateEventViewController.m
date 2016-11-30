@@ -5,6 +5,7 @@
 //  Created by Dylan McCrindle on 2016-11-29.
 //  Copyright © 2016 Dylan-Shahab. All rights reserved.
 //
+#import "DataManager.h"
 
 #import "CreateEventViewController.h"
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.popupView.layer.cornerRadius = 10;
+	[self.eventNameLabel becomeFirstResponder];
 }
 
 - (IBAction)newEventButton:(UIButton *)sender {
