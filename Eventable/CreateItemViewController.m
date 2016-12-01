@@ -6,8 +6,8 @@
 //  Copyright © 2016 Dylan-Shahab. All rights reserved.
 //
 #import "DataManager.h"
-
 #import "CreateItemViewController.h"
+
 #import "Item+CoreDataClass.h"
 #import "Event+CoreDataClass.h"
 
@@ -60,9 +60,8 @@
 		item.have = YES;
         item.photoName = @"beer.png";
         item.quantity = [self.itemCountField.text intValue];
-		item.events.title = @"party";
 		
-		
+		[self.itemEvent addItemsObject:item];
         
         [[DataManager sharedInstance] saveContext];
         

@@ -126,8 +126,9 @@
 	if(collectionView == self.createEventsCollection){
 		[self performSegueWithIdentifier:@"createEvent" sender:[collectionView cellForItemAtIndexPath:indexPath]];
 	}
-	else{
-		[self performSegueWithIdentifier:@"showEventDetails" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+	else if(collectionView == self.upcomingEventsCollection){
+		Event *event = self.upcomingArray[indexPath.row];
+		[self performSegueWithIdentifier:@"showEventDetails" sender:event];
 	}
 	
 }
@@ -135,8 +136,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 	
 	if([segue.identifier isEqualToString:@"showEventDetails"]){
-//		EventDetailsViewController *vc = (EventDetailsViewController*) segue.destinationViewController;
-//		vc.myEventCell = sender;
+		EventDetailsViewController *vc = (EventDetailsViewController*) segue.destinationViewController;
+		vc.event = sender;
 	}
 	else if ([segue.identifier isEqualToString:@"createEvent"]){
 		CreateEventViewController *vc = (CreateEventViewController *) segue.destinationViewController;

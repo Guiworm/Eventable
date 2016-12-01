@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Event;
+
 @interface EventDetailsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic) UICollectionViewCell *myEventCell;
+@property (nonatomic) Event *event;
 
 @end
