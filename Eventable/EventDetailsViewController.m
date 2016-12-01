@@ -33,6 +33,7 @@
 	if([self.myEventCell isMemberOfClass:[CreateEventViewCell class]]){
 		[self performSegueWithIdentifier:@"createNewEvent" sender:nil];
 	}
+//	[ reloadData];
 }
 
 #pragma Collection View
@@ -43,39 +44,31 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-//    
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"item.have MATCHES[cd] %@", YES];
-//    
-//    NSArray *array = [[DataManager sharedInstance] fetchData:@"Item" withPredicate:predicate];
-//    
-//    NSLog(@"%lu", (unsigned long)array.count);
-//
-//	return  array.count;
     
-    return 1;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"item.have MATCHES[cd] %@", YES];
+    
+    NSArray *array = [[DataManager sharedInstance] fetchData:@"Item" withPredicate:predicate];
+    
+    NSLog(@"%lu", array.count);
+
+	return  array.count;
+	
+	//return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 	NSInteger totalCells = [self collectionView:collectionView numberOfItemsInSection:indexPath.section];
 	
-	//Make the last cell a plus to add new item
-	if(indexPath.row == totalCells-1){
-		CreateItemViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"createItemCell" forIndexPath:indexPath];
-		[cell setupCell];
-		return cell;
-	}
 	// Configure all other cells filled with items already
-	else{
+	if(indexPath.row != totalCells-1){
 		ItemViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"itemCell" forIndexPath:indexPath];
-        [cell setupCell];
-        
-        NSArray *array = [[DataManager sharedInstance] fetchData:@"Item"];
-        Item *item = array[indexPath.row];
-        
-        
-        
-        
+		[cell setupCell];
 		
+		NSArray *array = [[DataManager sharedInstance] fetchData:@"Item"];
+		Item *item = array[indexPath.row];
+		cell.itemName.text = item.name;
+		
+		[[DataManager sharedInstance] saveContext];
 		
 		//Making the label rounded on top only
 		CAShapeLayer * maskLayer = [CAShapeLayer layer];
@@ -83,6 +76,12 @@
 		//Applying the mask
 		cell.layer.mask = maskLayer;
 		
+		return cell;
+	}
+	//Make the last cell a plus to add new item
+	else{
+		CreateItemViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"createItemCell" forIndexPath:indexPath];
+		[cell setupCell];
 		return cell;
 	}
 }
