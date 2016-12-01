@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@protocol DismissCreateEvent <NSObject>
+- (void)reloadCollectionViews;
+@end
+
+@interface HomeViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, DismissCreateEvent>
 
 
 @end
