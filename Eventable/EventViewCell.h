@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event+CoreDataClass.h"
 
 @interface EventViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *eventName;
 @property (weak, nonatomic) IBOutlet UIImageView *eventImage;
 
-- (void)setupCell;
+- (void)setupCell:(Event*)event;
 
 @end
