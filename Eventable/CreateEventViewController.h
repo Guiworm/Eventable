@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewController.h"
+
 
 @interface CreateEventViewController : UIViewController
+
+@property (nonatomic) id<DismissCreateEvent> delegate;
 
 @end

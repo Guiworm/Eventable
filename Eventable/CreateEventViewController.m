@@ -30,7 +30,10 @@
 	
 	//Cancel the event creation
 	if([[sender currentTitle] isEqualToString: @"Cancel"]){
-		[self dismissViewControllerAnimated:YES completion:nil];
+		
+		[self dismissViewControllerAnimated:YES completion:^{
+			[self.delegate reloadCollectionViews];
+		}];
 	}
 	
 	//Save the event
@@ -47,8 +50,10 @@
         event.location = @"Montreal";
         
         [[DataManager sharedInstance] saveContext];
-        
-		[self dismissViewControllerAnimated:YES completion:nil];
+		
+		[self dismissViewControllerAnimated:YES completion:^{
+			[self.delegate reloadCollectionViews];
+		}];
 		
 	}
 

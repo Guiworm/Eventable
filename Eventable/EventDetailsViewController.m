@@ -10,10 +10,14 @@
 #import "ItemViewCell.h"
 #import "CreateItemViewCell.h"
 #import "ItemSectionHeaderView.h"
-#import "Item+CoreDataClass.h"
 #import "CreateEventViewCell.h"
 
+#import "Item+CoreDataClass.h"
+#import "Event+CoreDataClass.h"
+
 @interface EventDetailsViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @end
 
@@ -21,7 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	self.navBar.topItem.title = @"HELLO";
+	Event *event = [[DataManager sharedInstance] fetchData:@"Event"][1];
+	NSLog(@"%@", event.items);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,10 +36,10 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-	if([self.myEventCell isMemberOfClass:[CreateEventViewCell class]]){
-		[self performSegueWithIdentifier:@"createNewEvent" sender:nil];
-	}
-//	[ reloadData];
+//	if([self.myEventCell isMemberOfClass:[CreateEventViewCell class]]){
+//		[self performSegueWithIdentifier:@"createNewEvent" sender:nil];
+//	}
+	[self.collectionView reloadData];
 }
 
 #pragma Collection View
@@ -43,15 +49,25 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"item.have MATCHES[cd] %@", YES];
-//    
-//    NSArray *array = [[DataManager sharedInstance] fetchData:@"Item" withPredicate:predicate];
-//    
-//    NSLog(@"%lu", array.count);
-//
-//	return  array.count;
+	
+//	NSPredicate *predicate;
+//	
+//	if(section == 0){
+//		predicate = [NSPredicate predicateWithFormat:@"items.have == TRUE"];
+//	}
+//	else{
+//		predicate = [NSPredicate predicateWithFormat:@"items.have == FALSE"];
+//	}
+//	
+//	NSArray *array = [[DataManager sharedInstance] fetchData:@"Event" withPredicate:predicate];
+//	NSLog(@"Count: %lu", (unsigned long)array.count);
+//	
+//	return array.count+1;
+	
+	
+	
+	
+	
 	
 	return 1;
 }

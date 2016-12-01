@@ -9,6 +9,7 @@
 
 #import "HomeViewController.h"
 #import "EventDetailsViewController.h"
+#import "CreateEventViewController.h"
 
 #import "EventViewCell.h"
 #import "CreateEventViewCell.h"
@@ -41,14 +42,12 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	//Firebase database creation
-	self.navBar.title = @"Events";
+	//self.navBar.title = @"Events";
 	
 	//AdMob by Google
 	self.adBannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
 	self.adBannerView.rootViewController = self;
 	[self.adBannerView loadRequest:[GADRequest request]];
-   
-	
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -59,8 +58,6 @@
 	[self.createEventsCollection reloadData];
 	[self.upcomingEventsCollection reloadData];
 	[self.pastEventsCollection reloadData];
-    
-   
 }
 
 #pragma Collections View
@@ -126,12 +123,28 @@
 
 //Send cell to the next view controller to determine if it needs to create a new event or not
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-	[self performSegueWithIdentifier:@"showEventDetails" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+	if(collectionView == self.createEventsCollection){
+		[self performSegueWithIdentifier:@"createEvent" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+	}
+	else{
+		[self performSegueWithIdentifier:@"showEventDetails" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+	}
+	
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-	EventDetailsViewController *vc = (EventDetailsViewController*) segue.destinationViewController;
-	vc.myEventCell = sender;
+	
+	if([segue.identifier isEqualToString:@"showEventDetails"]){
+//		EventDetailsViewController *vc = (EventDetailsViewController*) segue.destinationViewController;
+//		vc.myEventCell = sender;
+	}
+	else if ([segue.identifier isEqualToString:@"createEvent"]){
+		CreateEventViewController *vc = (CreateEventViewController *) segue.destinationViewController;
+		vc.delegate = self;
+	}
+	
+	
+
 }
 
 
@@ -152,9 +165,15 @@
             [self.createdArray addObject:event];
         }
     }
-    
 }
 
+- (void)reloadCollectionViews{
+	self.fetchedArray = [[DataManager sharedInstance] fetchData:@"Event"];
+	[self sortArray];
+	[self.createEventsCollection reloadData];
+	[self.upcomingEventsCollection reloadData];
+	[self.pastEventsCollection reloadData];
+}
 
 
 
