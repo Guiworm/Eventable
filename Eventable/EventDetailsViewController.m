@@ -14,6 +14,7 @@
 #import "CreateEventViewCell.h"
 
 @interface EventDetailsViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -33,7 +34,7 @@
 	if([self.myEventCell isMemberOfClass:[CreateEventViewCell class]]){
 		[self performSegueWithIdentifier:@"createNewEvent" sender:nil];
 	}
-//	[ reloadData];
+	[self.collectionView reloadData];
 }
 
 #pragma Collection View
@@ -45,15 +46,14 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"item.have MATCHES[cd] %@", YES];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"items.have == TRUE"];
     
-    NSArray *array = [[DataManager sharedInstance] fetchData:@"Item" withPredicate:predicate];
-    
-    NSLog(@"%lu", array.count);
-
-	return  array.count;
+    NSArray *array = [[DataManager sharedInstance] fetchData:@"Event" withPredicate:predicate];
 	
-	//return 1;
+    NSLog(@"Count: %@", array);
+
+	return array.count+1;
+	
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

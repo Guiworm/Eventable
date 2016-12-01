@@ -375,7 +375,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="createItemCell" id="5sR-MN-bH7" customClass="CreateItemViewCell">
-                                        <rect key="frame" x="122" y="50" width="100" height="100"/>
+                                        <rect key="frame" x="121.5" y="50" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -436,6 +436,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="MDo-gn-8gd" id="hzL-h0-YcD"/>
                         <segue destination="cPy-KM-zGL" kind="presentation" identifier="createNewEvent" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Bce-Ds-oxe"/>
                         <segue destination="xqS-g1-EA5" kind="presentation" identifier="addItem" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="7Dn-k5-pTt"/>
                         <segue destination="eGb-bk-FyP" kind="presentation" identifier="itemDetails" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="loa-zL-cnp"/>
