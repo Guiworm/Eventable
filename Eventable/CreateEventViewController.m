@@ -42,10 +42,8 @@
                         insertNewObjectForEntityForName:@"Event"
                         inManagedObjectContext:[DataManager sharedInstance].context];
         
-        
         event.title = self.eventNameLabel.text;
-        //NSTimeInterval MY_EXTRA_TIME = 36000;
-        event.date = self.eventDatePicker.date;//[[NSDate date] dateByAddingTimeInterval:MY_EXTRA_TIME];
+        event.date = self.eventDatePicker.date;
         event.location = @"Montreal";
         
         [[DataManager sharedInstance] saveContext];

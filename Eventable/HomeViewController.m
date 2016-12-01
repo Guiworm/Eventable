@@ -66,6 +66,9 @@
 
 -(void)viewDidAppear:(BOOL)animated{
 	[super viewWillAppear: animated];
+	[self.createEventsCollection reloadData];
+	[self.upcomingEventsCollection reloadData];
+	[self.pastEventsCollection reloadData];
 }
 
 
@@ -128,8 +131,6 @@
     Event *event = array[indexPath.row];
     cell.eventName.text = event.title;
     return cell;
-    
-    
 }
 
 //Send cell to the next view controller to determine if it needs to create a new event or not
