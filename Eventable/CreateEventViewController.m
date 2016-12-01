@@ -9,6 +9,8 @@
 
 #import "CreateEventViewController.h"
 
+#import "Event+CoreDataClass.h"
+
 @interface CreateEventViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *eventNameLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *eventDatePicker;
@@ -35,6 +37,19 @@
 	else{
 		NSLog(@"%@",self.eventNameLabel.text);
 		NSLog(@"%@",self.eventDatePicker.date);
+        
+        Event *event = [NSEntityDescription
+                        insertNewObjectForEntityForName:@"Event"
+                        inManagedObjectContext:[DataManager sharedInstance].context];
+        
+        
+        event.title = self.eventNameLabel.text;
+        //NSTimeInterval MY_EXTRA_TIME = 36000;
+        event.date = self.eventDatePicker.date;//[[NSDate date] dateByAddingTimeInterval:MY_EXTRA_TIME];
+        event.location = @"Montreal";
+        
+        [[DataManager sharedInstance] saveContext];
+        
 		[self dismissViewControllerAnimated:YES completion:nil];
 		
 	}
