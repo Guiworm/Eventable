@@ -14,7 +14,8 @@
 + (DataManager*)sharedInstance;
 - (NSArray *) fetchData:(NSString *)name;
 - (void)saveContext;
+-(NSArray *) fetchData:(NSString *)name withPredicate:(NSPredicate*)predicate;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
-
+@property (readonly) NSManagedObjectContext *context;
 @end

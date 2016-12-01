@@ -8,6 +8,7 @@
 #import "DataManager.h"
 
 #import "CreateItemViewController.h"
+#import "Item+CoreDataClass.h"
 
 @interface CreateItemViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -47,11 +48,27 @@
 		[self dismissViewControllerAnimated:YES completion:nil];
 	}
 	
-	//Save the event
+	//Save the item
 	else{
+        
+        Item *item = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Item"
+                      inManagedObjectContext:[DataManager sharedInstance].context];
+        item.name = self.itemNameField.text;
+        
+        item.photoName = @"beer.png";
+        
+        item.quantity = [self.itemCountField.text intValue];
+        
+        [[DataManager sharedInstance] saveContext];
+        
+        
 		NSLog(@"%@",self.itemNameField.text);
 		NSLog(@"%@",self.itemCountField.text);
+        
 		[self dismissViewControllerAnimated:YES completion:nil];
+        
+        
 		
 	}
 	

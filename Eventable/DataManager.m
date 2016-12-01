@@ -31,7 +31,7 @@
 	// The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
 	@synchronized (self) {
 		if (_persistentContainer == nil) {
-			_persistentContainer = [[NSPersistentContainer alloc] initWithName:@"W4D4___Receipt__"];
+			_persistentContainer = [[NSPersistentContainer alloc] initWithName:@"EventModel"];
 			[_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
 				if (error != nil) {
 					// Replace this implementation with code to handle the error appropriately.
@@ -83,5 +83,28 @@
 	
 	return fetchedObjects;
 }
+
+- (NSManagedObjectContext *)context {
+    return self.persistentContainer.viewContext;
+}
+
+-(NSArray *) fetchData:(NSString *)name withPredicate:(NSPredicate*)predicate{
+
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:name
+                                              inManagedObjectContext:self.persistentContainer.viewContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *fetchedObjects = [self.persistentContainer.viewContext executeFetchRequest:fetchRequest error:&error];
+    
+    fetchedObjects = [fetchedObjects filteredArrayUsingPredicate:predicate];
+    
+    return fetchedObjects;
+
+
+
+}
+
 
 @end

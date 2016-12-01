@@ -6,12 +6,11 @@
 //  Copyright © 2016 Dylan-Shahab. All rights reserved.
 //
 #import "DataManager.h"
-
 #import "EventDetailsViewController.h"
 #import "ItemViewCell.h"
 #import "CreateItemViewCell.h"
 #import "ItemSectionHeaderView.h"
-
+#import "Item+CoreDataClass.h"
 #import "CreateEventViewCell.h"
 
 @interface EventDetailsViewController ()
@@ -43,7 +42,17 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-	return 5;
+    
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"item.have MATCHES[cd] %@", YES];
+//    
+//    NSArray *array = [[DataManager sharedInstance] fetchData:@"Item" withPredicate:predicate];
+//    
+//    NSLog(@"%lu", (unsigned long)array.count);
+//
+//	return  array.count;
+    
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -58,7 +67,15 @@
 	// Configure all other cells filled with items already
 	else{
 		ItemViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"itemCell" forIndexPath:indexPath];
-		[cell setupCell];
+        [cell setupCell];
+        
+        NSArray *array = [[DataManager sharedInstance] fetchData:@"Item"];
+        Item *item = array[indexPath.row];
+        
+        
+        
+        
+		
 		
 		//Making the label rounded on top only
 		CAShapeLayer * maskLayer = [CAShapeLayer layer];
