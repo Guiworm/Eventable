@@ -45,15 +45,15 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"item.have MATCHES[cd] %@", YES];
-    
-    NSArray *array = [[DataManager sharedInstance] fetchData:@"Item" withPredicate:predicate];
-    
-    NSLog(@"%lu", array.count);
-
-	return  array.count;
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"item.have MATCHES[cd] %@", YES];
+//    
+//    NSArray *array = [[DataManager sharedInstance] fetchData:@"Item" withPredicate:predicate];
+//    
+//    NSLog(@"%lu", array.count);
+//
+//	return  array.count;
 	
-	//return 1;
+	return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
