@@ -211,7 +211,7 @@
 				TargetAttributes = {
 					A0731C7E1DEBC32800730908 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 95W96HR467;
+						DevelopmentTeam = A337N9L862;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -443,10 +443,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eventable/Eventable.entitlements;
-				DEVELOPMENT_TEAM = 95W96HR467;
+				DEVELOPMENT_TEAM = A337N9L862;
 				INFOPLIST_FILE = Eventable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DMSC.Eventable.shahab;
+				PRODUCT_BUNDLE_IDENTIFIER = DMSC.Eventable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -457,10 +457,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eventable/Eventable.entitlements;
-				DEVELOPMENT_TEAM = 95W96HR467;
+				DEVELOPMENT_TEAM = A337N9L862;
 				INFOPLIST_FILE = Eventable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DMSC.Eventable.shahab;
+				PRODUCT_BUNDLE_IDENTIFIER = DMSC.Eventable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -61,7 +61,6 @@
 }
 
 #pragma Collections View
-
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
 	return 1;
 }

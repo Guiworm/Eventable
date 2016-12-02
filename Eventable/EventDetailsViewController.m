@@ -33,6 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.title = self.event.title;
 	[self recheckData];
 }
 
@@ -91,8 +92,10 @@
 		
 		
 		cell.itemName.text = item.name;
-		cell.itemImage.image = [self loadImage: item.photoName];
 		
+		if(item.photoName != nil){
+			cell.itemImage.image = [self loadImage: item.photoName];
+		}
 		
 		//Making the label rounded on top only
 		CAShapeLayer * maskLayer = [CAShapeLayer layer];
@@ -131,7 +134,6 @@
         
 	}
 }
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 	if([segue.identifier isEqualToString:@"addItem"]){

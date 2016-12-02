@@ -81,6 +81,7 @@
 - (IBAction)UploadCustomPicture:(UIButton *)sender {
 	
 	[self.itemNameField resignFirstResponder];
+	[self.itemCountField resignFirstResponder];
 	
 	UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 	
