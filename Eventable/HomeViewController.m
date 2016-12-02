@@ -130,7 +130,11 @@
 		Event *event = self.upcomingArray[indexPath.row];
 		[self performSegueWithIdentifier:@"showEventDetails" sender:event];
 	}
-	
+	else if(collectionView == self.pastEventsCollection){
+		Event *event = self.pastArray[indexPath.row];
+		[self performSegueWithIdentifier:@"showEventDetails" sender:event];
+	}
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -143,9 +147,6 @@
 		CreateEventViewController *vc = (CreateEventViewController *) segue.destinationViewController;
 		vc.delegate = self;
 	}
-	
-	
-
 }
 
 

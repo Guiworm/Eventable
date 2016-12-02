@@ -24,6 +24,7 @@
 @property (nonatomic) NSMutableArray *haveItems;
 @property (nonatomic) NSMutableArray *haveNotItems;
 
+- (UIImage*)loadImage:(NSString*)name;
 
 @end
 
@@ -101,7 +102,7 @@
 		
 		
 		cell.itemName.text = item.name;
-		
+		cell.itemImage.image = [self loadImage: item.photoName];
 		
 		
 		//Making the label rounded on top only
@@ -120,10 +121,20 @@
 	}
 }
 
+
+- (UIImage*)loadImage:(NSString*)name{
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+														 NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString* path = [documentsDirectory stringByAppendingPathComponent: name];
+	UIImage* image = [UIImage imageWithContentsOfFile:path];
+	return image;
+}
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 	
 	if([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[CreateItemViewCell class]]){
-		[self performSegueWithIdentifier:@"addItem" sender:self.event];
+		[self performSegueWithIdentifier:@"addItem" sender:indexPath];
 	}
 	
 	if([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[ItemViewCell class]]){
@@ -134,7 +145,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 	if([segue.identifier isEqualToString:@"addItem"]){
 		CreateItemViewController *vc = (CreateItemViewController *) segue.destinationViewController;
-		vc.itemEvent = sender;
+		NSIndexPath *path = (NSIndexPath *)sender;
+		
+		//find out which add button was pushed so the item goes in the proper place
+		if(path.section == 0){
+			vc.itemHave = YES;
+		}
+		else{
+			vc.itemHave = NO;
+		}
+		
+		vc.itemEvent = self.event;
 		vc.delegate = self;
 	}
 }
@@ -154,7 +175,6 @@
 	}
 	else{
 		title = [NSString stringWithFormat:@"WHAT WE NEED"];
-
 	}
 	
 	ItemSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"eventHeader" forIndexPath:indexPath];

@@ -20,6 +20,7 @@
 @property (nonatomic) UIImage *uploadedImage;
 @property (nonatomic) IBOutlet UIView *overlayView;
 @property (nonatomic) UIImagePickerController *imagePickerController;
+@property (nonatomic) NSString *picturePathName;
 
 @end
 
@@ -59,18 +60,13 @@
                       inManagedObjectContext:[DataManager sharedInstance].context];
 		
         item.name = self.itemNameField.text;
-		item.have = NO;
-        item.photoName = @"beer.png";
+		item.have = self.itemHave;
+        item.photoName = self.picturePathName;
         item.quantity = [self.itemCountField.text intValue];
 		
 		[self.itemEvent addItemsObject:item];
         
-        [[DataManager sharedInstance] saveContext];
-        
-		NSLog(@"%@",self.itemNameField.text);
-		NSLog(@"%@",self.itemCountField.text);
-		NSLog(@"%d", item.have);
-
+		[[DataManager sharedInstance] saveContext];
 		
 		[self dismissViewControllerAnimated:YES completion:^{
 			[self.delegate reloadItemCollection];
@@ -143,6 +139,22 @@
 	self.uploadedImage = info[UIImagePickerControllerEditedImage];
 	[picker dismissViewControllerAnimated:YES completion:^{}];
 	[self.uploadedImageButton setBackgroundImage:self.uploadedImage forState:UIControlStateNormal];
+	
+	NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+	[dateFormat setDateFormat:@"yyyy-MM-dd-HH-mm-ss-a"];
+	//[dateFormat setDateStyle:NSDateFormatterLongStyle];
+	
+	self.picturePathName = [NSString stringWithFormat:@"%@.png", [dateFormat stringFromDate: [NSDate date]]];
+
+	
+	if (self.uploadedImage != nil){
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString* path = [documentsDirectory stringByAppendingPathComponent: [NSString stringWithFormat:@"%@",self.picturePathName]];
+		NSData* data = UIImagePNGRepresentation(self.uploadedImage);
+		[data writeToFile:path atomically:YES];
+	}
+	
 }
 - (IBAction)takePhoto:(id)sender
 {
