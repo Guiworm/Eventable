@@ -14,6 +14,7 @@
 @interface CreateItemViewController : UIViewController 
 
 @property (nonatomic) Event *itemEvent;
+@property (nonatomic) BOOL itemHave;
 @property id<DismissCreateItem> delegate;
 
 @end
