@@ -46,7 +46,9 @@
 	//Cancel the event creation
 	if([[sender currentTitle] isEqualToString: @"Cancel"]){
 		[self.view endEditing:YES];
-		[self dismissViewControllerAnimated:YES completion:nil];
+		[self dismissViewControllerAnimated:YES completion:^{
+			[self.delegate reloadItemCollection];
+		}];
 	}
 	
 	//Save the item
@@ -57,7 +59,7 @@
                       inManagedObjectContext:[DataManager sharedInstance].context];
 		
         item.name = self.itemNameField.text;
-		item.have = YES;
+		item.have = NO;
         item.photoName = @"beer.png";
         item.quantity = [self.itemCountField.text intValue];
 		
@@ -70,10 +72,9 @@
 		NSLog(@"%d", item.have);
 
 		
-		[self dismissViewControllerAnimated:YES completion:nil];
-        
-        
-		
+		[self dismissViewControllerAnimated:YES completion:^{
+			[self.delegate reloadItemCollection];
+		}];
 	}
 	
 }
