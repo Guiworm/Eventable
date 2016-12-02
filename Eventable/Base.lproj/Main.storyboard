@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pHI-ZN-yS5">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pHI-ZN-yS5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -261,7 +261,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcv-0m-RTg">
-                                        <rect key="frame" x="23" y="233.5" width="330" height="200"/>
+                                        <rect key="frame" x="23" y="159" width="330" height="350"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyh-3y-5AU">
                                                 <rect key="frame" x="0.0" y="15" width="330" height="29"/>
@@ -269,14 +269,42 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="shV-ZM-u8b">
+                                                <rect key="frame" x="45" y="74" width="240" height="144"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How Many" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-uk-set">
+                                                <rect key="frame" x="45.5" y="238" width="240" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6O-ss-xHh">
+                                                <rect key="frame" x="45.5" y="279" width="240" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="330" id="017-FV-jvA"/>
+                                            <constraint firstItem="shV-ZM-u8b" firstAttribute="centerX" secondItem="Xcv-0m-RTg" secondAttribute="centerX" id="1ga-LR-bTo"/>
                                             <constraint firstItem="fyh-3y-5AU" firstAttribute="width" secondItem="Xcv-0m-RTg" secondAttribute="width" id="5n8-yq-CQ7"/>
-                                            <constraint firstAttribute="height" constant="200" id="m6f-Et-b4b"/>
+                                            <constraint firstAttribute="trailing" secondItem="l6O-ss-xHh" secondAttribute="trailing" constant="45" id="9qg-Tb-jVs"/>
+                                            <constraint firstAttribute="bottom" secondItem="l6O-ss-xHh" secondAttribute="bottom" constant="50" id="Q0A-7v-2Aj"/>
+                                            <constraint firstItem="l6O-ss-xHh" firstAttribute="leading" secondItem="Xcv-0m-RTg" secondAttribute="leading" constant="45" id="Tkx-qn-f8t"/>
+                                            <constraint firstItem="shV-ZM-u8b" firstAttribute="top" secondItem="fyh-3y-5AU" secondAttribute="bottom" constant="30" id="VPZ-nb-sMk"/>
+                                            <constraint firstItem="2dk-uk-set" firstAttribute="top" secondItem="shV-ZM-u8b" secondAttribute="bottom" constant="20" id="Zga-4g-1nv"/>
+                                            <constraint firstItem="shV-ZM-u8b" firstAttribute="leading" secondItem="Xcv-0m-RTg" secondAttribute="leading" constant="45" id="cRf-QQ-3w7"/>
+                                            <constraint firstItem="2dk-uk-set" firstAttribute="leading" secondItem="Xcv-0m-RTg" secondAttribute="leading" constant="45" id="eje-Hi-78Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="2dk-uk-set" secondAttribute="trailing" constant="45" id="ks6-bR-wlr"/>
+                                            <constraint firstAttribute="height" constant="350" id="m6f-Et-b4b"/>
+                                            <constraint firstAttribute="trailing" secondItem="shV-ZM-u8b" secondAttribute="trailing" constant="45" id="rps-up-8U6"/>
                                             <constraint firstItem="fyh-3y-5AU" firstAttribute="top" secondItem="Xcv-0m-RTg" secondAttribute="top" constant="15" id="sP0-q4-kzf"/>
+                                            <constraint firstItem="l6O-ss-xHh" firstAttribute="top" secondItem="2dk-uk-set" secondAttribute="bottom" constant="20" id="vNv-W1-TGf"/>
+                                            <constraint firstItem="shV-ZM-u8b" firstAttribute="top" secondItem="fyh-3y-5AU" secondAttribute="bottom" constant="30" id="wFX-pq-41g"/>
                                             <constraint firstItem="fyh-3y-5AU" firstAttribute="centerX" secondItem="Xcv-0m-RTg" secondAttribute="centerX" id="wiY-7x-Dcm"/>
+                                            <constraint firstItem="2dk-uk-set" firstAttribute="top" secondItem="shV-ZM-u8b" secondAttribute="bottom" constant="20" id="zPP-2U-2tt"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -304,6 +332,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="howManyLabel" destination="l6O-ss-xHh" id="Zy6-SE-sIH"/>
+                        <outlet property="imageView" destination="shV-ZM-u8b" id="RSD-4M-1li"/>
+                        <outlet property="itemNameLabel" destination="fyh-3y-5AU" id="4wZ-Jt-Yj9"/>
                         <outlet property="popupView" destination="Xcv-0m-RTg" id="eUb-Gl-BZN"/>
                     </connections>
                 </viewController>

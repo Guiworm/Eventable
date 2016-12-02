@@ -10,6 +10,9 @@
 
 @interface ItemDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIView *popupView;
+@property (strong, nonatomic) IBOutlet UILabel *howManyLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *itemNameLabel;
 
 @end
 
@@ -18,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.popupView.layer.cornerRadius = 10;
+    
+    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat: @"EventBackground1.png"]];
+    self.howManyLabel.text = [NSString stringWithFormat:@"%d", self.myitem.quantity];
+    self.itemNameLabel.text = self.myitem.name;
 }
 
 - (IBAction)dismissViewTap:(UITapGestureRecognizer *)sender {
