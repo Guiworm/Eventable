@@ -7,17 +7,23 @@
 //
 #import "DataManager.h"
 #import "EventDetailsViewController.h"
+#import "CreateItemViewController.h"
+
 #import "ItemViewCell.h"
 #import "CreateItemViewCell.h"
-#import "ItemSectionHeaderView.h"
 #import "CreateEventViewCell.h"
+#import "ItemSectionHeaderView.h"
 
 #import "Item+CoreDataClass.h"
 #import "Event+CoreDataClass.h"
 
+
 @interface EventDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (nonatomic) NSMutableArray *haveItems;
+@property (nonatomic) NSMutableArray *haveNotItems;
+
 
 @end
 
@@ -25,20 +31,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.navBar.topItem.title = @"HELLO";
-	Event *event = [[DataManager sharedInstance] fetchData:@"Event"][1];
-	NSLog(@"%@", event.items);
+	[self recheckData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) recheckData{
+	self.haveItems = [NSMutableArray new];
+	self.haveNotItems = [NSMutableArray new];
+	
+	
+	for (Item *item in self.event.items) {
+		if (item.have) {
+			[self.haveItems addObject: item];
+		}
+		else if(!item.have){
+			[self.haveNotItems addObject: item];
+		}
+	}
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-//	if([self.myEventCell isMemberOfClass:[CreateEventViewCell class]]){
-//		[self performSegueWithIdentifier:@"createNewEvent" sender:nil];
-//	}
 	[self.collectionView reloadData];
 }
 
@@ -58,18 +69,17 @@
 //	else{
 //		predicate = [NSPredicate predicateWithFormat:@"items.have == FALSE"];
 //	}
-//	
-//	NSArray *array = [[DataManager sharedInstance] fetchData:@"Event" withPredicate:predicate];
-//	NSLog(@"Count: %lu", (unsigned long)array.count);
-//	
-//	return array.count+1;
 	
 	
 	
-	
-	
-	
-	return 1;
+
+	if(section == 0){
+		return self.haveItems.count+1;
+	}
+	else{
+		return self.haveNotItems.count+1;
+
+	}
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -80,11 +90,19 @@
 		ItemViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"itemCell" forIndexPath:indexPath];
 		[cell setupCell];
 		
-		NSArray *array = [[DataManager sharedInstance] fetchData:@"Item"];
-		Item *item = array[indexPath.row];
+		Item *item;
+		
+		if(indexPath.section == 0){
+			item = self.haveItems[indexPath.row];
+		}
+		else{
+			item = self.haveNotItems[indexPath.row];
+		}
+		
+		
 		cell.itemName.text = item.name;
 		
-		[[DataManager sharedInstance] saveContext];
+		
 		
 		//Making the label rounded on top only
 		CAShapeLayer * maskLayer = [CAShapeLayer layer];
@@ -105,13 +123,27 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 	
 	if([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[CreateItemViewCell class]]){
-		[self performSegueWithIdentifier:@"addItem" sender:nil];
+		[self performSegueWithIdentifier:@"addItem" sender:self.event];
 	}
 	
 	if([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[ItemViewCell class]]){
 		[self performSegueWithIdentifier:@"itemDetails" sender:nil];
 	}
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	if([segue.identifier isEqualToString:@"addItem"]){
+		CreateItemViewController *vc = (CreateItemViewController *) segue.destinationViewController;
+		vc.itemEvent = sender;
+		vc.delegate = self;
+	}
+}
+
+-(void) reloadItemCollection{
+	[self recheckData];
+	[self.collectionView reloadData];
+}
+
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
 	

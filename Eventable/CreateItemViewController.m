@@ -6,8 +6,8 @@
 //  Copyright © 2016 Dylan-Shahab. All rights reserved.
 //
 #import "DataManager.h"
-
 #import "CreateItemViewController.h"
+
 #import "Item+CoreDataClass.h"
 #import "Event+CoreDataClass.h"
 
@@ -46,7 +46,9 @@
 	//Cancel the event creation
 	if([[sender currentTitle] isEqualToString: @"Cancel"]){
 		[self.view endEditing:YES];
-		[self dismissViewControllerAnimated:YES completion:nil];
+		[self dismissViewControllerAnimated:YES completion:^{
+			[self.delegate reloadItemCollection];
+		}];
 	}
 	
 	//Save the item
@@ -57,12 +59,11 @@
                       inManagedObjectContext:[DataManager sharedInstance].context];
 		
         item.name = self.itemNameField.text;
-		item.have = YES;
+		item.have = NO;
         item.photoName = @"beer.png";
         item.quantity = [self.itemCountField.text intValue];
-		item.events.title = @"party";
 		
-		
+		[self.itemEvent addItemsObject:item];
         
         [[DataManager sharedInstance] saveContext];
         
@@ -71,10 +72,9 @@
 		NSLog(@"%d", item.have);
 
 		
-		[self dismissViewControllerAnimated:YES completion:nil];
-        
-        
-		
+		[self dismissViewControllerAnimated:YES completion:^{
+			[self.delegate reloadItemCollection];
+		}];
 	}
 	
 }

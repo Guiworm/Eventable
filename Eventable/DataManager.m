@@ -88,7 +88,7 @@
     return self.persistentContainer.viewContext;
 }
 
--(NSArray *) fetchData:(NSString *)name withPredicate:(NSPredicate*)predicate{
+- (NSArray *) fetchData:(NSString *)name withPredicate:(NSPredicate*)predicate{
 
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:name

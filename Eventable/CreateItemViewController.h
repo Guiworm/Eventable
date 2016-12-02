@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Event;
+#import "EventDetailsViewController.h"
+
 
 @interface CreateItemViewController : UIViewController 
+
+@property (nonatomic) Event *itemEvent;
+@property id<DismissCreateItem> delegate;
 
 @end

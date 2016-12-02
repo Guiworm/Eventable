@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventDetailsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@class Event;
+
+@protocol DismissCreateItem <NSObject>
+
+-(void) reloadItemCollection;
+@end
+
+@interface EventDetailsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, DismissCreateItem>
 
 @property (nonatomic) UICollectionViewCell *myEventCell;
+@property (nonatomic) Event *event;
 
 @end
