@@ -13,6 +13,7 @@
 #import "CreateItemViewCell.h"
 #import "CreateEventViewCell.h"
 #import "ItemSectionHeaderView.h"
+#import "ItemDetailsViewController.h"
 
 #import "Item+CoreDataClass.h"
 #import "Event+CoreDataClass.h"
@@ -61,18 +62,6 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 	
-//	NSPredicate *predicate;
-//	
-//	if(section == 0){
-//		predicate = [NSPredicate predicateWithFormat:@"items.have == TRUE"];
-//	}
-//	else{
-//		predicate = [NSPredicate predicateWithFormat:@"items.have == FALSE"];
-//	}
-	
-	
-	
-
 	if(section == 0){
 		return self.haveItems.count+1;
 	}
@@ -127,9 +116,11 @@
 	}
 	
 	if([[collectionView cellForItemAtIndexPath:indexPath] isMemberOfClass:[ItemViewCell class]]){
-		[self performSegueWithIdentifier:@"itemDetails" sender:nil];
+		[self performSegueWithIdentifier:@"itemDetails" sender:indexPath];
+        
 	}
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 	if([segue.identifier isEqualToString:@"addItem"]){
@@ -137,6 +128,26 @@
 		vc.itemEvent = sender;
 		vc.delegate = self;
 	}
+    else if ([segue.identifier isEqualToString:@"itemDetails"]){
+        // instatiate ItemDetailsViewController
+        //set item to instance
+            ItemDetailsViewController *ivc = segue.destinationViewController;
+        
+        NSIndexPath *indexPath = (NSIndexPath*)sender;
+            
+        Item *item;
+        
+        if(indexPath.section == 0){
+            item = self.haveItems[indexPath.row];
+            //ivc.myitem = item;
+        }
+        else{
+            item = self.haveNotItems[indexPath.row];
+           // ivc.myitem = item;
+        }
+        ivc.myitem = item;
+    }
+    
 }
 
 -(void) reloadItemCollection{

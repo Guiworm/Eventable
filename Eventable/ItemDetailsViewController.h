@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item+CoreDataClass.h"
 
 @interface ItemDetailsViewController : UIViewController
+
+@property (nonatomic) Item *myitem;
 
 @end
