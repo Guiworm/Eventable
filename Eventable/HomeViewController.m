@@ -42,7 +42,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	//Firebase database creation
-	//self.navBar.title = @"Events";
+	self.title = @"Events";
 	
 	//AdMob by Google
 	self.adBannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
@@ -177,5 +177,84 @@
 }
 
 
+- (IBAction)deleteEventGesture:(UILongPressGestureRecognizer *)sender {
+	CGPoint point = [sender locationInView:self.upcomingEventsCollection];
+	NSIndexPath *indexPath = [self.upcomingEventsCollection indexPathForItemAtPoint:point];
+	
+	UICollectionViewCell* cell = [self.upcomingEventsCollection cellForItemAtIndexPath:indexPath];
+
+	if (sender.state == UIGestureRecognizerStateBegan) {
+		[cell.layer addAnimation:[self shakeAnimation] forKey:@""];
+	}
+	
+	if(sender.state == UIGestureRecognizerStateChanged){
+		[cell.layer removeAllAnimations];
+	}
+	
+	if (sender.state != UIGestureRecognizerStateEnded) {
+		return;
+	}
+	
+	if (indexPath == nil){
+		NSLog(@"couldn't find index path");
+	} else {
+		// get the cell at indexPath (the one you long pressed)
+		//UICollectionViewCell* cell = [self.upcomingEventsCollection cellForItemAtIndexPath:indexPath];
+		cell.layer.borderWidth = 0;
+		[[DataManager sharedInstance].context deleteObject: self.upcomingArray[indexPath.row]];
+		[[DataManager sharedInstance] saveContext];
+		[self.upcomingEventsCollection performBatchUpdates:^ {
+			[self.upcomingArray removeObjectAtIndex:indexPath.row];
+			[self.upcomingEventsCollection deleteItemsAtIndexPaths:@[indexPath]];
+		} completion:nil];
+	}
+}
+
+- (IBAction)deletePastEventGesture:(UILongPressGestureRecognizer *)sender {
+	CGPoint point = [sender locationInView:self.pastEventsCollection];
+	NSIndexPath *indexPath = [self.pastEventsCollection indexPathForItemAtPoint:point];
+	UICollectionViewCell* cell = [self.pastEventsCollection cellForItemAtIndexPath:indexPath];
+	
+	if (sender.state == UIGestureRecognizerStateBegan) {
+		[cell.layer addAnimation:[self shakeAnimation] forKey:@""];
+	}
+	
+	if(sender.state == UIGestureRecognizerStateChanged){
+		[cell.layer removeAllAnimations];
+	}
+	
+	if (sender.state != UIGestureRecognizerStateEnded) {
+		return;
+	}
+	
+	if (indexPath == nil){
+		NSLog(@"couldn't find index path");
+	} else {
+		// get the cell at indexPath (the one you long pressed)
+		//UICollectionViewCell* cell = [self.upcomingEventsCollection cellForItemAtIndexPath:indexPath];
+		cell.layer.borderWidth = 0;
+		[[DataManager sharedInstance].context deleteObject: self.pastArray[indexPath.row]];
+		[[DataManager sharedInstance] saveContext];
+		[self.upcomingEventsCollection performBatchUpdates:^ {
+			[self.pastArray removeObjectAtIndex:indexPath.row];
+			[self.pastEventsCollection deleteItemsAtIndexPaths:@[indexPath]];
+		} completion:nil];
+	}
+}
+
+#pragma Animations
+- (CAAnimation*)shakeAnimation{
+	CAKeyframeAnimation* animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+	CGFloat wobbleAngle = 0.06f;
+	
+	NSValue* shakeLeft = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(wobbleAngle, 0.0f, 0.0f, 1.0f)];
+	NSValue* shakeRight = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(-wobbleAngle, 0.0f, 0.0f, 1.0f)];
+	animation.values = [NSArray arrayWithObjects:shakeLeft, shakeRight, nil];
+	animation.autoreverses = YES;
+	animation.duration = 0.125;
+	animation.repeatCount = HUGE_VALF;
+	
+	return animation;
+}
 
 @end

@@ -162,11 +162,9 @@
         
         if(indexPath.section == 0){
             item = self.haveItems[indexPath.row];
-            //ivc.myitem = item;
         }
         else{
             item = self.haveNotItems[indexPath.row];
-           // ivc.myitem = item;
         }
         ivc.myitem = item;
     }
@@ -176,6 +174,54 @@
 -(void) reloadItemCollection{
 	[self recheckData];
 	[self.collectionView reloadData];
+}
+
+- (IBAction)deleteItemGesture:(UILongPressGestureRecognizer *)sender {
+	CGPoint firstPoint = [sender locationInView:self.collectionView];
+	NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:firstPoint];
+	UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+	
+	//dont do anything when you're trying to delete the add item cell
+	NSInteger totalCells = [self collectionView:self.collectionView numberOfItemsInSection:indexPath.section];
+	if(indexPath.row == totalCells-1){
+		return;
+	}
+	
+	if (sender.state == UIGestureRecognizerStateBegan) {
+		[cell.layer addAnimation:[self shakeAnimation] forKey:@""];
+	}
+	
+	if(sender.state == UIGestureRecognizerStateChanged){
+		[cell.layer removeAllAnimations];
+	}
+	
+	if (sender.state != UIGestureRecognizerStateEnded) {
+		return;
+	}
+	
+	if (indexPath == nil){
+		NSLog(@"couldn't find index path");
+	} else {
+		
+		if(indexPath.section == 0){			
+			[[DataManager sharedInstance].context deleteObject: self.haveItems[indexPath.row]];
+			[[DataManager sharedInstance] saveContext];
+			[self.collectionView performBatchUpdates:^ {
+				[self.haveItems removeObjectAtIndex:indexPath.row];
+				[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+			} completion:nil];
+
+		}
+		else{
+			[[DataManager sharedInstance].context deleteObject: self.haveNotItems[indexPath.row]];
+			[[DataManager sharedInstance] saveContext];
+			[self.collectionView performBatchUpdates:^ {
+				[self.haveNotItems removeObjectAtIndex:indexPath.row];
+				[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+			} completion:nil];
+
+		}
+	}
 }
 
 
@@ -195,6 +241,20 @@
 	headerView.sectionTitleLabel.textColor = [UIColor whiteColor];
 	
 	return headerView;
+}
+
+- (CAAnimation*)shakeAnimation{
+	CAKeyframeAnimation* animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+	CGFloat wobbleAngle = 0.06f;
+	
+	NSValue* shakeLeft = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(wobbleAngle, 0.0f, 0.0f, 1.0f)];
+	NSValue* shakeRight = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(-wobbleAngle, 0.0f, 0.0f, 1.0f)];
+	animation.values = [NSArray arrayWithObjects:shakeLeft, shakeRight, nil];
+	animation.autoreverses = YES;
+	animation.duration = 0.125;
+	animation.repeatCount = HUGE_VALF;
+	
+	return animation;
 }
 
 @end
